@@ -37,7 +37,7 @@ def index():
 @login_required
 def persons_view():
     persons = Person.query.all()
-    return render_template('persons.html', title="Lista de Personas", persons=persons)
+    return render_template('persons/index_person.html', title="Lista de Personas", persons=persons)
 
 # Crear una persona
 @bp.route('/persons/create', methods=['GET', 'POST'])
@@ -59,7 +59,7 @@ def create_person():
         flash('Persona creada con éxito.', 'success')
         return redirect(url_for('views.persons_view'))
 
-    return render_template('create_person.html', title="Crear Persona")
+    return render_template('persons/create_person.html', title="Crear Persona")
 
 # Editar una persona
 @bp.route('/persons/edit/<int:id>', methods=['GET', 'POST'])
@@ -84,7 +84,7 @@ def edit_person(id):
         flash('Persona actualizada con éxito.', 'success')
         return redirect(url_for('views.persons_view'))
 
-    return render_template('edit_person.html', title="Editar Persona", person=person)
+    return render_template('persons/edit_person.html', title="Editar Persona", person=person)
 
 # Borrar una persona
 @bp.route('/persons/delete/<int:id>', methods=['POST'])
