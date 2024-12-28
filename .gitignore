@@ -5,7 +5,6 @@ venv/
 
 # Archivos de configuración sensibles
 instance/
-config.py
 
 # Archivos de bases de datos locales
 *.sqlite3
