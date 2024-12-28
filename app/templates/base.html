@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <header class="bg-blue-600 text-white p-4 shadow">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">Flask Application</h1>
+            <nav>
+                <a href="/" class="px-4 py-2 hover:underline">Inicio</a>
+                <a href="/persons" class="px-4 py-2 hover:underline">Personas</a>
+                {% if session.get('user_id') %}
+                    <a href="{{ url_for('views.logout') }}" class="px-4 py-2 hover:underline">Cerrar Sesión</a>
+                {% else %}
+                    <a href="{{ url_for('views.login') }}" class="px-4 py-2 hover:underline">Iniciar Sesión</a>
+                {% endif %}
+            </nav>
+        </div>
+    </header>
+    <main class="container mx-auto p-4">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="my-4">
+            {% for category, message in messages %}
+            <div class="bg-{{ 'green-500' if category == 'success' else 'red-500' }} text-white p-2 rounded mb-2">
+                {{ message }}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

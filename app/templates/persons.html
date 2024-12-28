@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2 class="text-2xl font-bold mb-4">Lista de Personas</h2>
+<table class="table-auto w-full border-collapse border border-gray-200">
+    <thead>
+        <tr class="bg-gray-200">
+            <th class="border border-gray-300 px-4 py-2">ID</th>
+            <th class="border border-gray-300 px-4 py-2">Nombre</th>
+            <th class="border border-gray-300 px-4 py-2">Edad</th>
+            <th class="border border-gray-300 px-4 py-2">Email</th>
+            <th class="border border-gray-300 px-4 py-2">Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for person in persons %}
+        <tr class="hover:bg-gray-100">
+            <td class="border border-gray-300 px-4 py-2">{{ person.id }}</td>
+            <td class="border border-gray-300 px-4 py-2">{{ person.name }}</td>
+            <td class="border border-gray-300 px-4 py-2">{{ person.age }}</td>
+            <td class="border border-gray-300 px-4 py-2">{{ person.email }}</td>
+            <td class="border border-gray-300 px-4 py-2">
+                <a href="{{ url_for('views.edit_person', id=person.id) }}" class="text-blue-600 hover:underline">Editar</a>
+                <form action="{{ url_for('views.delete_person', id=person.id) }}" method="post" class="inline">
+                    <button type="submit" class="text-red-600 hover:underline" onclick="return confirm('¿Estás seguro?')">Eliminar</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href="{{ url_for('views.create_person') }}" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Crear Nueva Persona</a>
+{% endblock %}

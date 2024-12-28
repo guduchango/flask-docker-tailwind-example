@@ -1,0 +1,53 @@
+# Entornos virtuales
+venv/
+.env
+*.env
+
+# Archivos de configuración sensibles
+instance/
+config.py
+
+# Archivos de bases de datos locales
+*.sqlite3
+*.db
+
+# Archivos compilados de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Directorios de Flask y migraciones
+migrations/
+
+# Archivos de logs y temporales
+*.log
+*.pid
+*.swp
+.DS_Store
+*.tmp
+
+# Docker
+*.pid
+*.tar
+docker-compose.override.yml
+
+# IDEs y editores
+.vscode/
+.idea/
+*.iml
+
+# Archivos del sistema operativo
+Thumbs.db
+*.DS_Store
+
+# Archivos de test coverage
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache/
+pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
