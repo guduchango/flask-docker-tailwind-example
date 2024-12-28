@@ -20,8 +20,8 @@ def create_app():
     migrate.init_app(app, db)
 
     # Registrar rutas
-    from .routes import bp as api_bp  # Importación de las rutas solo cuando se crea la app
-    from .views import bp as views_bp
+    from .routes.api_routes import bp as api_bp  # Importación de las rutas solo cuando se crea la app
+    from .routes.views_routes import bp as views_bp
     app.register_blueprint(api_bp, url_prefix='/api')  # Prefijo para el API
     app.register_blueprint(views_bp)
 

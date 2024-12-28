@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash,session
-from .models import Person
+from ..models import Person
 from app.models import User
-from . import db
+from .. import db
 from app.auth_utils import login_required
 
 bp = Blueprint('views', __name__)   
