@@ -3,13 +3,16 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from .config import Config
 import os
+from flask_jwt_extended import JWTManager
 
 # Inicializar SQLAlchemy y Migrate
 db = SQLAlchemy()
 migrate = Migrate()
 
+
 def create_app():
     app = Flask(__name__)
+    jwt = JWTManager(app)
     app.config.from_object(Config)
 
     # Configuración de la base de datos

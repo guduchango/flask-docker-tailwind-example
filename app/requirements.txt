@@ -2,3 +2,9 @@ flask
 mysql-connector-python
 flask-sqlalchemy
 flask-migrate
+pytest 
+pytest-flask
+install faker
+flask-sqlalchemy 
+flask-bcrypt 
+flask-jwt-extended

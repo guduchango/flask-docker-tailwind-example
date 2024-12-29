@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash,session
+from flask import Blueprint, render_template, request, redirect, url_for, flash,session,abort
 from ..models import Person
 from app.models import User
 from .. import db
@@ -65,7 +65,9 @@ def create_person():
 @bp.route('/persons/edit/<int:id>', methods=['GET', 'POST'])
 @login_required
 def edit_person(id):
-    person = Person.query.get_or_404(id)
+    person = db.session.get(Person, id)
+    if not person:
+        abort(404, description="Person not found")
     
     if request.method == 'POST':
         email = request.form['email']
