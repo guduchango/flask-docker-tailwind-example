@@ -16,7 +16,7 @@ def create_app():
     app.config.from_object(Config)
 
     # Configuración de la base de datos
-    app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+mysqlconnector://root:rootpassword@localhost:3330/flaskdb"
+    app.config['SQLALCHEMY_DATABASE_URI'] = f"mysql+mysqlconnector://root:rootpassword@db:3306/flaskdb"
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.init_app(app)

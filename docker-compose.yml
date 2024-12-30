@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     
     ports:
-      - "6000:5000"
+      - "5000:5000"
     environment:
       MYSQL_HOST: db
       MYSQL_USER: user
@@ -15,6 +15,9 @@ services:
       MYSQL_DATABASE: flaskdb
     depends_on:
       - db
+    volumes:
+      - .:/app
+      - /app/__pycache__
 
   db:
     image: mysql:8.0

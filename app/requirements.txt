@@ -4,7 +4,7 @@ flask-sqlalchemy
 flask-migrate
 pytest 
 pytest-flask
-install faker
+faker
 flask-sqlalchemy 
 flask-bcrypt 
 flask-jwt-extended

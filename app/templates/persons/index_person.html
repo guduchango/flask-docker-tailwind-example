@@ -2,6 +2,7 @@
 
 {% block content %}
 <h2 class="text-2xl font-bold mb-4">Lista de Personas</h2>
+<a href="{{ url_for('views.create_person') }}" class="inline-block mb-4 mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Crear Nueva Persona</a>
 <table class="table-auto w-full border-collapse border border-gray-200">
     <thead>
         <tr class="bg-gray-200">
@@ -29,5 +30,5 @@
         {% endfor %}
     </tbody>
 </table>
-<a href="{{ url_for('views.create_person') }}" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Crear Nueva Persona</a>
+
 {% endblock %}

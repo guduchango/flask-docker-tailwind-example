@@ -9,11 +9,9 @@ email = fake.email()
 @pytest.fixture
 def authenticated_client(client):
 
-    # Realiza el inicio de sesión
     login_response = client.post(
         '/login', data={"username": "admin", "password": "admin123"}
     )
-
     
     assert login_response.status_code == 302 
     return client
@@ -33,7 +31,7 @@ def test_create_view_post(authenticated_client):
     response = authenticated_client.post('/persons/create', data=data, follow_redirects=True )
     assert response.status_code == 200 
     assert b"Lista de Personas" in response.data
-    
+
 
 def test_edit_view_get(authenticated_client):
     data = {"name": fake.name(), "age":fake.random_int(18,60), "email": email}
