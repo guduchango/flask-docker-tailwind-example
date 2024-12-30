@@ -10,7 +10,7 @@ from app.controllers.person_controller import (
 
 bp = Blueprint('api', __name__)
 
-# Auth Routes
+
 @bp.route('/register', methods=['POST'])
 def register_user():
     return register_user_logic(request.json)
@@ -21,7 +21,6 @@ def login_user():
     return login_user_logic(request.json)
 
 
-# Person Routes
 @bp.route('/persons', methods=['POST'])
 @token_required
 def create_person():

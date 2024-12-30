@@ -1,9 +1,9 @@
 import json
 from faker import Faker
-fake = Faker()
-email = fake.email()
 from app.models import Person,User
 from flask_jwt_extended import create_access_token
+fake = Faker()
+email = fake.email()
 
 def test_user_existence(client):
     assert User.query.filter_by(username="testuser").first() is not None

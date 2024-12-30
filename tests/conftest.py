@@ -31,3 +31,4 @@ def general_token(app):
     from app.models import User
     test_user = User.query.filter_by(username="testuser").first()
     return create_access_token(identity=str(test_user.id))
+

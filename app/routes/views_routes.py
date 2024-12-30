@@ -11,7 +11,7 @@ from app.controllers.person_controllers_views import (
 
 bp = Blueprint('views', __name__)
 
-# Autenticación
+
 @bp.route('/login', methods=['GET', 'POST'])
 def login():
     return login_view()
@@ -21,13 +21,13 @@ def login():
 def logout():
     return logout_view()
 
-# Página principal
+
 @bp.route('/')
 @login_required
 def index():
     return index_view()
 
-# Rutas de personas
+
 @bp.route('/persons')
 @login_required
 def persons_view():
