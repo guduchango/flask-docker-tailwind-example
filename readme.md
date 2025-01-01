@@ -125,8 +125,8 @@ Ensure you have the following installed on your system:
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone git@github.com:guduchango/flask-docker-tailwind-example.git
+   cd flask-docker-tailwind-example
    ```
 
 2. **Set up a virtual environment** (optional for local development):
