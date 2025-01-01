@@ -10,11 +10,10 @@ services:
       - "5000:5000"
     environment:
       DATABASE_URL: sqlite:///app.db
-    depends_on:
-      - db
     volumes:
       - .:/app
       - /app/__pycache__
+      - /instance
 
 volumes:
   db_data:
