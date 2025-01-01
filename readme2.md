@@ -78,6 +78,7 @@ This project is configured to run in a Docker environment.
    ```bash
    docker-compose up -d
    ```
+3. Access the application at `http://127.0.0.1:5000`.
 
 #### **Database Setup**
 1. Access the app container:
@@ -90,17 +91,6 @@ This project is configured to run in a Docker environment.
    flask db migrate -m "Initial migration"
    flask db upgrade
    ```
-3. Run the following commands to make admin user:
-   ```bash
-    flask shell
-    from app import db
-    from app.models import User
-    admin = User(username='admin')
-    admin.set_password('admin123')
-    db.session.add(admin)
-    db.session.commit()
-   ```
-4. Access the application at `http://127.0.0.1:5000`.
 
 #### **Database Information**
 - The application uses a SQLite database, which is stored at `instance/app.db`.
@@ -134,8 +124,8 @@ Ensure you have the following installed on your system:
 
 1. **Clone the repository**:
    ```bash
-   git clone git@github.com:guduchango/flask-docker-tailwind-example.git
-   cd flask-docker-tailwind-example
+   git clone <repository-url>
+   cd <repository-folder>
    ```
 
 2. **Set up a virtual environment** (optional for local development):
@@ -151,17 +141,6 @@ Ensure you have the following installed on your system:
 
 4. **Run the application locally**:
    ```bash
-   flask db init
-   flask db migrate -m "Initial migration"
-   flask db upgrade
-   flask shell
-   from app import db
-   from app.models import User
-   admin = User(username='admin')
-   admin.set_password('admin123')
-   db.session.add(admin)
-   db.session.commit()
-   export FLASK_APP=app.py
    flask run
    ```
    The application will be accessible at `http://127.0.0.1:5000`.
@@ -207,7 +186,7 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 ## Contact
-For any questions or support, please contact [ hello@edgardoponce.com ].
+For any questions or support, please contact [your-email@example.com].
 
 ---
 

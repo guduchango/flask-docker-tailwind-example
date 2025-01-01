@@ -29,6 +29,6 @@ def create_test_user():
 def general_token(app):
     from flask_jwt_extended import create_access_token
     from app.models import User
-    test_user = User.query.filter_by(username="testuser").first()
+    test_user = User.query.filter_by(username="admin").first()
     return create_access_token(identity=str(test_user.id))
 

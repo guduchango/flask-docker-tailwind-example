@@ -6,7 +6,7 @@ fake = Faker()
 email = fake.email()
 
 def test_user_existence(client):
-    assert User.query.filter_by(username="testuser").first() is not None
+    assert User.query.filter_by(username="admin").first() is not None
 
 def test_get_all_persons(client,general_token):
     response = client.get(
