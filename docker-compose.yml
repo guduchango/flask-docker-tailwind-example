@@ -9,28 +9,12 @@ services:
     ports:
       - "5000:5000"
     environment:
-      MYSQL_HOST: db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: flaskdb
+      DATABASE_URL: sqlite:///app.db
     depends_on:
       - db
     volumes:
       - .:/app
       - /app/__pycache__
-
-  db:
-    image: mysql:8.0
-    ports:
-      - "3330:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
-      MYSQL_DATABASE: flaskdb
-    volumes:
-      - db_data:/var/lib/mysql
-      - ./app/db/init.sql:/docker-entrypoint-initdb.d/init.sql:ro
 
 volumes:
   db_data:

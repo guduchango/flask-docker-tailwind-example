@@ -1,5 +1,4 @@
 flask
-mysql-connector-python
 flask-sqlalchemy
 flask-migrate
 pytest 
