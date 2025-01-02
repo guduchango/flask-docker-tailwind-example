@@ -198,7 +198,7 @@ Ensure you have the following installed on your system:
 ### Login Page
 ![Login Page](https://images.edgardoponce.com/flask-python-tailwind-example/login.png)
 
-### List Persons Page
+### Dashboard
 ![List Persons Page](https://images.edgardoponce.com/flask-python-tailwind-example/home.png)
 
 ### List Persons Page
