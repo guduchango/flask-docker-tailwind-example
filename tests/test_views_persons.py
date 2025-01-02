@@ -30,7 +30,7 @@ def test_create_view_post(authenticated_client):
     data = {"name": fake.name(), "age":fake.random_int(18,60), "email": email}
     response = authenticated_client.post('/persons/create', data=data, follow_redirects=True )
     assert response.status_code == 200 
-    assert b"Lista de Personas" in response.data
+    assert b"Persons list" in response.data
 
 
 def test_edit_view_get(authenticated_client):
@@ -39,4 +39,4 @@ def test_edit_view_get(authenticated_client):
     person = Person.query.filter_by(email=data['email']).first()
     response = authenticated_client.get(f'/persons/edit/{person.id}')
     assert response.status_code == 200
-    assert b"Editar Persona" in response.data
+    assert b"Edit Person" in response.data

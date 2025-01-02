@@ -191,6 +191,11 @@ Ensure you have the following installed on your system:
    ```
    The application will be accessible at `http://127.0.0.1:5000`.
 
+5. **Test application**:
+   ```bash
+   pytest -s ./tests/
+   ```
+
 ---
 
 ## Screenshots
