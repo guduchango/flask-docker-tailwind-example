@@ -201,19 +201,19 @@ Ensure you have the following installed on your system:
 ## Screenshots
 
 ### Login Page
-![Login Page](https://images.edgardoponce.com/flask-python-tailwind-example/login.png)
+![Login Page](https://images.edgardoponce.com/flask-python-tailwind-example/login.png?v=2)
 
 ### Dashboard
-![List Persons Page](https://images.edgardoponce.com/flask-python-tailwind-example/home.png)
+![List Persons Page](https://images.edgardoponce.com/flask-python-tailwind-example/home.png?v=2)
 
 ### List Persons Page
-![List Persons Page](https://images.edgardoponce.com/flask-python-tailwind-example/list.png)
+![List Persons Page](https://images.edgardoponce.com/flask-python-tailwind-example/list.png?v=2)
 
 ### Create Person Page
-![Create Person Page](https://images.edgardoponce.com/flask-python-tailwind-example/create.png)
+![Create Person Page](https://images.edgardoponce.com/flask-python-tailwind-example/create.png?v=2)
 
 ### Edit Person Page
-![Edit Person Page](https://images.edgardoponce.com/flask-python-tailwind-example/edit.png)
+![Edit Person Page](https://images.edgardoponce.com/flask-python-tailwind-example/edit.png?v=2)
 
 ---
 
