@@ -4,12 +4,12 @@ from app import db
 
 
 def index_view():
-    return render_template('index.html', title="Página Principal")
+    return render_template('index.html', title="Home")
 
 
 def list_persons_view():
     persons = Person.query.all()
-    return render_template('persons/index_person.html', title="Lista de Personas", persons=persons)
+    return render_template('persons/index_person.html', title="Person list", persons=persons)
 
 
 def create_person_view():
@@ -20,16 +20,16 @@ def create_person_view():
 
         existing_person = Person.query.filter_by(email=email).first()
         if existing_person:
-            flash('El correo electrónico ya está registrado con otra persona.', 'error')
+            flash('The email is already registered with another person.', 'error')
             return redirect(url_for('views.create_person'))
 
         person = Person(name=name, age=age, email=email)
         db.session.add(person)
         db.session.commit()
-        flash('Persona creada con éxito.', 'success')
+        flash('Person successfully created.', 'success')
         return redirect(url_for('views.persons_view'))
 
-    return render_template('persons/create_person.html', title="Crear Persona")
+    return render_template('persons/create_person.html', title="Create Person")
 
 
 def edit_person_view(id):
@@ -44,17 +44,17 @@ def edit_person_view(id):
 
         existing_person = Person.query.filter_by(email=email).first()
         if existing_person and existing_person.id != id:
-            flash('El correo electrónico ya está registrado con otra persona.', 'error')
+            flash('The email is already registered with another person.', 'error')
             return redirect(url_for('views.edit_person', id=id))
 
         person.name = name
         person.age = age
         person.email = email
         db.session.commit()
-        flash('Persona actualizada con éxito.', 'success')
+        flash('Successfully updated person.', 'success')
         return redirect(url_for('views.persons_view'))
 
-    return render_template('persons/edit_person.html', title="Editar Persona", person=person)
+    return render_template('persons/edit_person.html', title="Edit Person", person=person)
 
 
 def delete_person_view(id):
@@ -63,5 +63,5 @@ def delete_person_view(id):
         abort(404, description="Person not found")
     db.session.delete(person)
     db.session.commit()
-    flash('Persona eliminada con éxito.', 'success')
+    flash('Person successfully eliminated.', 'success')
     return redirect(url_for('views.persons_view'))

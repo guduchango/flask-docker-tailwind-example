@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../static/img/Flask.ico"/>
     <title>{{ title }}</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -11,12 +12,12 @@
         <div class="container mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold">Flask Application</h1>
             <nav>
-                <a href="/" class="px-4 py-2 hover:underline">Inicio</a>
-                <a href="/persons" class="px-4 py-2 hover:underline">Personas</a>
+                <a href="/" class="px-4 py-2 hover:underline">Home</a>
+                <a href="/persons" class="px-4 py-2 hover:underline">Persons</a>
                 {% if session.get('user_id') %}
-                    <a href="{{ url_for('views.logout') }}" class="px-4 py-2 hover:underline">Cerrar Sesión</a>
+                    <a href="{{ url_for('views.logout') }}" class="px-4 py-2 hover:underline">Log out</a>
                 {% else %}
-                    <a href="{{ url_for('views.login') }}" class="px-4 py-2 hover:underline">Iniciar Sesión</a>
+                    <a href="{{ url_for('views.login') }}" class="px-4 py-2 hover:underline">Log in</a>
                 {% endif %}
             </nav>
         </div>

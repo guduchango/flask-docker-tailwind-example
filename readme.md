@@ -105,7 +105,32 @@ This project is configured to run in a Docker environment.
 #### **Database Information**
 - The application uses a SQLite database, which is stored at `instance/app.db`.
 
+### **Test API with curls**
+**Auth**
+```
+curl -X POST http://127.0.0.1:5000/api/login \
+-H "Content-Type: application/json" \
+-d '{"username": "admin", "password": "admin123"}'
+```
+**Create person**
+```
+curl -X GET http://127.0.0.1:5000/api/persons \
+-H "Authorization: Bearer YOUR_JWT_TOKEN"
+```
+**Update person**
+```
+curl -X PUT http://127.0.0.1:5000/api/persons/1 \
+-H "Authorization: Bearer YOUR_JWT_TOKEN" \
+-H "Content-Type: application/json" \
+-d '{"name": "Jane Doe", "age": 28, "email": "jane.doe@example.com"}'
+```
+**Delete person**
+```
+curl -X DELETE http://127.0.0.1:5000/api/persons/1 \
+-H "Authorization: Bearer YOUR_JWT_TOKEN"
+```
 ---
+
 
 ## Key Features
 - **Authentication**:
@@ -172,6 +197,9 @@ Ensure you have the following installed on your system:
 
 ### Login Page
 ![Login Page](https://images.edgardoponce.com/flask-python-tailwind-example/login.png)
+
+### List Persons Page
+![List Persons Page](https://images.edgardoponce.com/flask-python-tailwind-example/home.png)
 
 ### List Persons Page
 ![List Persons Page](https://images.edgardoponce.com/flask-python-tailwind-example/list.png)

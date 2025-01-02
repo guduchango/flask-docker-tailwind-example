@@ -46,8 +46,8 @@ def login_view():
             flash('Inicio de sesión exitoso.', 'success')
             return redirect(url_for('views.persons_view'))
         else:
-            flash('Credenciales inválidas.', 'error')
-    return render_template('login.html', title='Iniciar Sesión')
+            flash('Invalid credentials.', 'error')
+    return render_template('login.html', title='Log in')
 
 
 def logout_view():
